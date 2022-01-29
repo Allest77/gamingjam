@@ -6,7 +6,6 @@ public class playerMovement : MonoBehaviour {
     //Publics
     public float speed = 8f, jumpHeight = 3.2f, jumpForce = 20, gravity = -20.0f;
     public bool isGrounded = true;
-    //public SoundManager jump;
 
     //Privates
     Rigidbody rb;
@@ -15,7 +14,6 @@ public class playerMovement : MonoBehaviour {
     void Start() {
         //GetComponents
         rb = GetComponent<Rigidbody>();
-        //jump = GameObject.FindObjectOfType<SoundManager>();
     }
 
     void Update() {
