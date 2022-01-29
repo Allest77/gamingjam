@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce77d63f87489e94dbbc115a1cbcf9e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialSound: Gameplay Music
   sounds:
   - name: Main Menu
     clip: {fileID: 8300000, guid: 436c3166e3ec8f240954b724f343690b, type: 3}

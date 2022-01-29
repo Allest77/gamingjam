@@ -6,6 +6,8 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
+    public String initialSound;
+
     public Sound[] sounds;
 
     public static AudioManager instance;
@@ -33,6 +35,11 @@ public class AudioManager : MonoBehaviour
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
+    }
+
+    private void Start()
+    {
+        Play(initialSound);
     }
 
     public void Play(string name)
