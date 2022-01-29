@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 5955294180898113678}
   - component: {fileID: 7476192226778146854}
   - component: {fileID: 8919286896078819259}
+  - component: {fileID: 1594249107}
   m_Layer: 0
   m_Name: boyo
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,5 +112,22 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1594249107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5955294180898113677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5c87378fcbc0a840af6a45a3cefae8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 12
+  jumpHeight: 16.2
+  jumpForce: 20
+  gravity: -20
+  isGrounded: 1
