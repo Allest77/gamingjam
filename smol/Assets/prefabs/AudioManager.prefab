@@ -48,24 +48,24 @@ MonoBehaviour:
   - name: Main Menu
     clip: {fileID: 8300000, guid: 436c3166e3ec8f240954b724f343690b, type: 3}
     volume: 0.7
-    pitch: 0
+    pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: Gameplay Music
     clip: {fileID: 8300000, guid: 1fa65a23a16daba49a437dbddbe83859, type: 3}
     volume: 0.7
-    pitch: 0
+    pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: Jump
     clip: {fileID: 8300000, guid: ca35f05900bde1546afe29b48b740460, type: 3}
     volume: 0.7
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Switch
     clip: {fileID: 8300000, guid: 9fc7d91fa4079384b94c14c7d6f0fb2b, type: 3}
     volume: 0.8
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
