@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7476192226778146854}
   - component: {fileID: 8919286896078819259}
   - component: {fileID: 1594249107}
+  - component: {fileID: 401933051}
   m_Layer: 0
   m_Name: boyo
   m_TagString: Player
@@ -96,8 +97,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5803221, y: 7.88, z: 0.2}
-  m_Center: {x: 0.25201267, y: 0, z: 0}
+  m_Size: {x: 1.5803221, y: 7.88, z: 0.95061433}
+  m_Center: {x: 0.25201267, y: 0, z: -0.00083464384}
 --- !u!54 &8919286896078819259
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -131,3 +132,18 @@ MonoBehaviour:
   jumpForce: 20
   gravity: -20
   isGrounded: 1
+  phase1: {fileID: 0}
+  phase2: {fileID: 0}
+--- !u!114 &401933051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5955294180898113677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18bd738db0b74384eb3bc80286b73eff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawn: {fileID: 0}
