@@ -10,6 +10,7 @@ public class mainMenu2 : MonoBehaviour {
     bool gameStart;
 
     public void LoadLevel(int levelIndex) {
+        FindObjectOfType<AudioManager>().Stop("Main Menu");
         SceneManager.LoadScene("Sam's"); }
 
     public void DisplayText() {
