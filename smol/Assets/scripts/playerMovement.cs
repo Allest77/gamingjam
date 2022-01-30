@@ -9,7 +9,6 @@ public class playerMovement : MonoBehaviour {
 
     //Privates
     Rigidbody rb;
-    private Vector3 direction;
 
     void Start() {
         //GetComponents
@@ -19,17 +18,20 @@ public class playerMovement : MonoBehaviour {
     void Update() {
         //Move horizontally.
         float hInput = Input.GetAxis("Horizontal");
-        direction.x = hInput * speed;
+        float vInput = Input.GetAxis("Vertical");
+        Vector3 movement = new Vector3(hInput, 0.0f, vInput);
+        transform.Translate(movement * Time.deltaTime * speed);
 
         //Jump input.
         if (Input.GetButtonDown("Jump") && isGrounded) {
-            direction.y = (jumpHeight * jumpForce);
+            isGrounded = false;
+            GetComponent<Rigidbody>().AddForce(transform.TransformDirection(Vector3.up) * jumpHeight * jumpForce);
             Debug.Log("Jumping");
         }
 
         //Tells the game to multiply player's gravity on the y-axis, whenever they aren't grounded.
-        if (!isGrounded) {
-            direction.y += gravity * Time.deltaTime;
+        if (Input.GetButtonUp("Jump") && !isGrounded) {
+            GetComponent<Rigidbody>().AddForce(transform.TransformDirection(Vector3.down) * gravity);
         }
     }
 
