@@ -20,7 +20,7 @@ public class playerMovement : MonoBehaviour {
         float hInput = Input.GetAxis("Horizontal");
         float vInput = Input.GetAxis("Vertical");
         Vector3 movement = new Vector3(hInput, 0.0f, vInput);
-        transform.Translate(movement * Time.deltaTime * speed);
+        rb.MovePosition(transform.position + movement * Time.deltaTime * speed);
 
         //Jump input.
         if (Input.GetButtonDown("Jump") && isGrounded) {
