@@ -6,9 +6,12 @@ public class playerMovement : MonoBehaviour {
     //Publics
     public float speed = 8f, jumpHeight = 3.2f, jumpForce = 20, gravity = -20.0f;
     public bool isGrounded = true;
+    public GameObject phase1;
+    public GameObject phase2;
 
     //Privates
     Rigidbody rb;
+    private bool switched;
 
     void Start() {
         //GetComponents
@@ -33,6 +36,19 @@ public class playerMovement : MonoBehaviour {
             isGrounded = false;
             GetComponent<Rigidbody>().AddForce(transform.TransformDirection(Vector3.up) * jumpHeight * jumpForce);
             Debug.Log("Jumping");
+        }
+
+        if (Input.GetButtonDown("Fire3") && !switched)
+        {
+            phase1.SetActive(false);
+            phase2.SetActive(true);
+            switched = true;
+        }
+        else if(Input.GetButtonDown("Fire3") && switched)
+        {
+            phase1.SetActive(true);
+            phase2.SetActive(false);
+            switched = false;
         }
 
         if (Input.GetButtonDown("Switch"))
