@@ -16,7 +16,7 @@ public class cameraLook : MonoBehaviour {
         offset = transform.position - target.position;
     }
 
-    void LateUpdate() {
+    void FixedUpdate() {
         transform.LookAt(playerTarget);
 
         Vector3 desiredPosition = transform.position = target.position + offset;
