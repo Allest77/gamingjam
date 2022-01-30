@@ -28,11 +28,20 @@ public class playerMovement : MonoBehaviour {
     private void Update()
     {
         //Jump input.
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if ((Input.GetButtonDown("Jump") && isGrounded) || (Input.GetButtonDown("Switch") && isGrounded))
         {
             isGrounded = false;
             GetComponent<Rigidbody>().AddForce(transform.TransformDirection(Vector3.up) * jumpHeight * jumpForce);
             Debug.Log("Jumping");
+        }
+
+        if (Input.GetButtonDown("Switch"))
+        {
+            gravity = gravity * -1;
+            jumpHeight = jumpHeight * -1;
+            jumpForce = jumpForce * -1;
+            gameObject.transform.localScale = new Vector3(1, gameObject.transform.localScale.y * -1, 1);
+            Physics.gravity = new Vector3(0, Physics.gravity.y * -1, 0);
         }
 
         //Tells the game to multiply player's gravity on the y-axis, whenever they aren't grounded.
