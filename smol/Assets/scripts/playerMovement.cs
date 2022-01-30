@@ -15,22 +15,29 @@ public class playerMovement : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
     }
 
-    void Update() {
+    void FixedUpdate() {
         //Move horizontally.
         float hInput = Input.GetAxis("Horizontal");
         float vInput = Input.GetAxis("Vertical");
         Vector3 movement = new Vector3(hInput, 0.0f, vInput);
         rb.MovePosition(transform.position + movement * Time.deltaTime * speed);
 
+        
+    }
+
+    private void Update()
+    {
         //Jump input.
-        if (Input.GetButtonDown("Jump") && isGrounded) {
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
             isGrounded = false;
             GetComponent<Rigidbody>().AddForce(transform.TransformDirection(Vector3.up) * jumpHeight * jumpForce);
             Debug.Log("Jumping");
         }
 
         //Tells the game to multiply player's gravity on the y-axis, whenever they aren't grounded.
-        if (Input.GetButtonUp("Jump") && !isGrounded) {
+        if (Input.GetButtonUp("Jump") && !isGrounded)
+        {
             GetComponent<Rigidbody>().AddForce(transform.TransformDirection(Vector3.down) * gravity);
         }
     }
